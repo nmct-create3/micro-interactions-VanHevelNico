@@ -935,6 +935,24 @@ more padding on the right to avoid overlap
     ---
     Password toggle custom checkbox
 */
+.c-password-toggle {
+    display: block;
+
+}
+
+.c-eye {
+    position: absolute;
+    height: 36px;
+    top: 0;
+}
+
+.c-eye--hidden {
+    opacity: 0;
+}
+
+.c-eye--hidden:checked {
+    opacity: 1;
+}
 
 /*------------------------------------*\
 #UTILITIES
