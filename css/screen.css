@@ -935,23 +935,42 @@ more padding on the right to avoid overlap
     ---
     Password toggle custom checkbox
 */
-.c-password-toggle {
+
+.c-toggle-password-container {
     display: block;
-
+    position: relative;
 }
 
-.c-eye {
+.c-toggle-password {
     position: absolute;
-    height: 36px;
+    display: block;
     top: 0;
+    right: 0;
+    bottom: 0;
 }
 
-.c-eye--hidden {
-    opacity: 0;
+.c-toggle-password__label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--global-whitespace-md);
 }
 
-.c-eye--hidden:checked {
-    opacity: 1;
+.c-toggle-password__icon--hide {
+    display: none;
+}
+
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--hide {
+    display: block;
+}
+
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--show {
+    display: none;
+}
+
+.c-toggle-password__icon {
+    width: 24px;
+    fill: var(--global-color-neutral-light);
 }
 
 /*------------------------------------*\
