@@ -119,6 +119,8 @@ html {
     text-shadow: none;
 }
 
+
+
 /*------------------------------------*\
 #Elements
 \*------------------------------------*/
@@ -543,16 +545,16 @@ input::placeholder {
 }
 
 .c-logo__path--1 {
-    fill: var(--logo__path--1--Fill);
-}
-
-.c-logo__path--2 {
-    fill: var(--logo__path--2--Fill);
-}
-
-.c-logo__path--3 {
-    fill: var(--logo__path--3--Fill);
-}
+    fill: var(--logo__path--1--fill, var(--global-color-neutral-xxxx-dark));
+  }
+  
+  .c-logo__path--2 {
+    fill: var(--logo__path--2--fill, var(--global-color-alpha));
+  }
+  
+  .c-logo__path--3 {
+    fill: var(--logo__path--3--fill, var(--global-color-alpha-x-dark));
+  }
 
 /*
     Component: Card
@@ -1371,4 +1373,37 @@ No media query since this is the default in mobile first design
     h3 {
         page-break-after: avoid;
     }
+}
+
+/* 
+    darkmode
+*/
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --global-page-color: var(--color-neutral-xxxx-light);
+        --global-page-backgroundColor: var(--global-color-neutral-xxxx-dark);
+    }
+    
+    html {
+        color: var(--global-page-color); 
+        background-color: var(--global-page-backgroundColor);
+    }
+
+    .c-logo {
+        --logo__path--1--fill: White;
+        --logo__path--2--fill: var(--logo__path--1--fill);
+        --logo__path--3--fill: var(--logo__path--1--fill);
+    }
+
+    .c-card {
+        --card-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --card__footer-borderColor: var(--global-color-neutral-xxxx-dark);
+        color: white;
+    }
+
+    .c-label {
+        --label-color: var(--global-color-neutral-x-light);
+    }
+
 }
